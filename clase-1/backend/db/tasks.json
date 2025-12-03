@@ -1,0 +1,37 @@
+[
+  {
+    "id": "67484512f1a3c9b8d201a001",
+    "content": "Revisar documentos del proyecto",
+    "idUser": "671abc12f1a3c9b8d2000001",
+    "timestamp": 1732046400000,
+    "completed": false
+  },
+  {
+    "id": "67484512f1a3c9b8d201a002",
+    "content": "Preparar reunión con el equipo",
+    "idUser": "671abc12f1a3c9b8d2000002",
+    "timestamp": 1732050000000,
+    "completed": true
+  },
+  {
+    "id": "67484512f1a3c9b8d201a003",
+    "content": "Actualizar endpoints de la API",
+    "idUser": "671abc12f1a3c9b8d2000001",
+    "timestamp": 1732053600000,
+    "completed": false
+  },
+  {
+    "id": "67484512f1a3c9b8d201a004",
+    "content": "Refactorizar validaciones con Zod",
+    "idUser": "671abc12f1a3c9b8d2000003",
+    "timestamp": 1732057200000,
+    "completed": false
+  },
+  {
+    "id": "67484512f1a3c9b8d201a005",
+    "content": "Configurar middleware de autenticación JWT",
+    "idUser": "671abc12f1a3c9b8d2000001",
+    "timestamp": 1732060800000,
+    "completed": true
+  }
+]
