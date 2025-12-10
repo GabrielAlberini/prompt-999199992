@@ -1,24 +1,14 @@
 import { useState, useEffect } from "react";
 
 export function Home() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem("tasks") || []))
   const [listening, setListening] = useState(false);
   const [recognition, setRecognition] = useState(null);
 
-  // Cargar tareas desde localStorage al iniciar
-  useEffect(() => {
-    const storedTasks = localStorage.getItem("tasks");
-    if (storedTasks) {
-      setTasks(JSON.parse(storedTasks));
-    }
-  }, []);
-
-  // Guardar tareas en localStorage cada vez que cambian
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
-  // Inicializar SpeechRecognition
   useEffect(() => {
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -30,16 +20,14 @@ export function Home() {
       recog.interimResults = false;
 
       recog.onresult = (event) => {
-        console.log(event)
-        const rawTranscript = event.results[event.results.length - 1][0].transcript.trim();
+        const rawTranscript =
+          event.results[event.results.length - 1][0].transcript.trim();
 
-        // Transformación
+        if (!rawTranscript || rawTranscript.length < 2) return;
+
         let transcript = rawTranscript.toLowerCase();
-
-        // Primera letra en mayúscula
         transcript = transcript.charAt(0).toUpperCase() + transcript.slice(1);
 
-        // Asegurar punto final
         if (!transcript.endsWith(".")) {
           transcript += ".";
         }
@@ -85,12 +73,15 @@ export function Home() {
   };
 
   const deleteTask = (id) => {
-    if (confirm("Estas seguro que quieres borrar la tarea?")) setTasks((prev) => prev.filter((task) => task.id !== id));
+    if (confirm("¿Estás seguro que quieres borrar la tarea?")) {
+      setTasks((prev) => prev.filter((task) => task.id !== id));
+    }
   };
 
   return (
     <div>
       <h1>Administrador de Tareas</h1>
+
       <button onClick={startListening} disabled={listening}>
         Iniciar escucha
       </button>
