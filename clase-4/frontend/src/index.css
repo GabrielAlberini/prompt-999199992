@@ -1,0 +1,363 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables de marca */
+:root {
+  --color-primary: #2979FF;
+  /* Azul eléctrico */
+  --color-secondary: #00C896;
+  /* Verde menta */
+  --color-accent: #FFD54F;
+  /* Amarillo creativo */
+  --color-neutral-light: #F5F7FA;
+  /* Gris claro */
+  --color-neutral-dark: #2E2E2E;
+  /* Gris carbón */
+
+  --radius: 10px;
+  --shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  --transition: 0.25s ease;
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Tipografía global */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-neutral-light);
+  color: var(--color-neutral-dark);
+  line-height: 1.6;
+}
+
+/* Layout general */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background-color: var(--color-primary);
+  padding: 1rem 2rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  opacity: 0.8;
+}
+
+/* Botones */
+.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #009b75;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--color-neutral-light);
+  color: var(--color-neutral-dark);
+  font-size: 0.9rem;
+}
+
+/* Formularios */
+/* Contenedor principal */
+.auth-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Título */
+.auth-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Formulario */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+input {
+  padding: 0.6rem;
+  border: 1px solid var(--color-neutral-dark);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* Botones */
+.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #1a5fd1;
+}
+
+.btn-secondary {
+  background-color: var(--color-accent);
+  color: var(--color-neutral-dark);
+  margin-top: 1rem;
+}
+
+.btn-secondary:hover {
+  background-color: #fbc02d;
+}
+
+/* Botón alternar login/registro */
+.toggle-btn {
+  width: 100%;
+}
+
+/* CONTENEDOR */
+.home-container {
+  max-width: 620px;
+  margin: 2.5rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TÍTULO */
+.home-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* CONTROLES */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* LISTA DE TAREAS */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-neutral-light);
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition), background var(--transition);
+}
+
+.task-item:hover {
+  background: #eef3fa;
+  transform: translateY(-2px);
+}
+
+.task-text {
+  flex: 1;
+  font-size: 1rem;
+  font-family: var(--font-body);
+}
+
+.task-text.done {
+  text-decoration: line-through;
+  color: #777;
+}
+
+/* ACCIONES */
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 5px;
+}
+
+/* BOTONES */
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+
+  height: 42px;
+  /* 🔥 Altura uniforme */
+  min-width: 42px;
+  /* 🔥 Ancho mínimo uniforme */
+  padding: 0 14px;
+  /* 🔥 Padding horizontal igual */
+
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* PARA BOTONES DE SOLO ICONO */
+.btn-icon {
+  padding: 0;
+  /* Quita paddings sobrantes */
+  width: 42px;
+  /* 🔥 Mismo tamaño para todos */
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* PRIMARIO — Azul corporativo */
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary.submit {
+  margin-bottom: 5px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #1f5fcc;
+}
+
+/* SECUNDARIO — Verde menta */
+.btn-secondary {
+  background: var(--color-secondary);
+  color: #fff;
+  margin: 0;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #00a87d;
+}
+
+/* ACCENT — Amarillo creativo */
+.btn-accent {
+  background: var(--color-accent);
+  color: #5a4a00;
+}
+
+.btn-accent:hover {
+  background: #ffca2b;
+}
+
+/* ROJO — Para borrar */
+.btn-danger {
+  background: #e53935;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background: #c62828;
+}
