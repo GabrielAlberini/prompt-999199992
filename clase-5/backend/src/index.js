@@ -11,7 +11,7 @@ server.get("/", (req, res) => {
   res.json({ status: "ok" })
 })
 
-// GET - Obtener todas las tareas
+// GET - Obtener todas las tareas+
 server.get("/tasks", async (req, res) => {
   const tasks = await Task.find().sort({ createdAt: -1 })
   res.send(tasks)
