@@ -3,10 +3,24 @@ import mongoose from "mongoose"
 const connectDb = async () => {
   try {
     await mongoose.connect("mongodb://localhost:27017/prompt-data")
-    console.log("✅ Conectado a Mongodb con éxito")
+    console.log("✅ Conectado a MongoDB con éxito")
   } catch (error) {
-    console.log("❌ Error al conectarse a mongodb", error.name)
+    console.log("❌ Error al conectarse a MongoDB", error.message)
   }
 }
 
-export { connectDb }
+const getDbStatus = () => {
+  const states = {
+    0: "disconnected",
+    1: "connected",
+    2: "connecting",
+    3: "disconnecting"
+  }
+
+  return {
+    state: mongoose.connection.readyState,
+    status: states[mongoose.connection.readyState]
+  }
+}
+
+export { connectDb, getDbStatus }

@@ -1,18 +1,18 @@
 meta {
-  name: add new task
+  name: update tasks
   type: http
   seq: 3
 }
 
-post {
-  url: http://localhost:1111/tasks
+patch {
+  url: http://localhost:1111/tasks/694be92d296115a9392a03f6
   body: json
   auth: inherit
 }
 
 body:json {
   {
-    "text": "Ir a la verduleria."
+  
   }
 }
 

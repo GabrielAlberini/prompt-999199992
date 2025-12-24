@@ -1,10 +1,10 @@
 meta {
-  name: get users
+  name: delete task
   type: http
-  seq: 1
+  seq: 4
 }
 
-get {
+delete {
   url: http://localhost:1111/tasks
   body: none
   auth: inherit
@@ -12,5 +12,4 @@ get {
 
 settings {
   encodeUrl: true
-  timeout: 0
 }

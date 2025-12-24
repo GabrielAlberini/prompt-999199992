@@ -1,3 +1,5 @@
+// definir contrato en tanto backend con base de datos
+
 import mongoose from 'mongoose'
 
 const taskSchema = new mongoose.Schema({
